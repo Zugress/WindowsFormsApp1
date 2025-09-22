@@ -1,20 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class ToDoList : Form
     {
-        public Form1()
+        DataTable todolist = new DataTable();
+        bool isEditing = false;
+
+        public ToDoList()
         {
             InitializeComponent();
+        }
+
+        private void ToDoList_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
