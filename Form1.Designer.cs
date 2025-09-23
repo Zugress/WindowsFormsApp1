@@ -28,120 +28,116 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.treeView1 = new System.Windows.Forms.TreeView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.listBoxTasks = new System.Windows.Forms.ListBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonMarkComplete = new System.Windows.Forms.Button();
+            this.buttonSortByTitle = new System.Windows.Forms.Button();
+            this.buttonSortByPriority = new System.Windows.Forms.Button();
+            this.buttonSortByCategory = new System.Windows.Forms.Button();
+            this.buttonSortByDate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // listBoxTasks
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
+            this.listBoxTasks.FormattingEnabled = true;
+            this.listBoxTasks.ItemHeight = 25;
+            this.listBoxTasks.Location = new System.Drawing.Point(44, 545);
+            this.listBoxTasks.Name = "listBoxTasks";
+            this.listBoxTasks.Size = new System.Drawing.Size(1028, 204);
+            this.listBoxTasks.TabIndex = 0;
             // 
-            // splitContainer1.Panel1
+            // buttonAdd
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
-            this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanel1);
+            this.buttonAdd.Location = new System.Drawing.Point(342, 133);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(154, 85);
+            this.buttonAdd.TabIndex = 1;
+            this.buttonAdd.Text = "Add";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // splitContainer1.Panel2
+            // buttonEdit
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
-            this.splitContainer1.Size = new System.Drawing.Size(1539, 828);
-            this.splitContainer1.SplitterDistance = 512;
-            this.splitContainer1.TabIndex = 0;
+            this.buttonEdit.Location = new System.Drawing.Point(531, 133);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(154, 85);
+            this.buttonEdit.TabIndex = 2;
+            this.buttonEdit.Text = "Edit";
+            this.buttonEdit.UseVisualStyleBackColor = true;
             // 
-            // treeView1
+            // buttonDelete
             // 
-            this.treeView1.BackColor = System.Drawing.Color.Silver;
-            this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.treeView1.Location = new System.Drawing.Point(6, 163);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(485, 621);
-            this.treeView1.TabIndex = 1;
+            this.buttonDelete.Location = new System.Drawing.Point(723, 133);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(154, 85);
+            this.buttonDelete.TabIndex = 3;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
+            // buttonMarkComplete
             // 
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Controls.Add(this.button4);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(491, 138);
-            this.flowLayoutPanel1.TabIndex = 0;
+            this.buttonMarkComplete.Location = new System.Drawing.Point(907, 133);
+            this.buttonMarkComplete.Name = "buttonMarkComplete";
+            this.buttonMarkComplete.Size = new System.Drawing.Size(154, 85);
+            this.buttonMarkComplete.TabIndex = 4;
+            this.buttonMarkComplete.Text = "Mark complete";
+            this.buttonMarkComplete.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonSortByTitle
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 135);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonSortByTitle.Location = new System.Drawing.Point(342, 250);
+            this.buttonSortByTitle.Name = "buttonSortByTitle";
+            this.buttonSortByTitle.Size = new System.Drawing.Size(154, 85);
+            this.buttonSortByTitle.TabIndex = 5;
+            this.buttonSortByTitle.Text = "By Title";
+            this.buttonSortByTitle.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonSortByPriority
             // 
-            this.button2.Location = new System.Drawing.Point(130, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 135);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonSortByPriority.Location = new System.Drawing.Point(531, 250);
+            this.buttonSortByPriority.Name = "buttonSortByPriority";
+            this.buttonSortByPriority.Size = new System.Drawing.Size(154, 85);
+            this.buttonSortByPriority.TabIndex = 6;
+            this.buttonSortByPriority.Text = "By Priority";
+            this.buttonSortByPriority.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonSortByCategory
             // 
-            this.button3.Location = new System.Drawing.Point(257, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 135);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonSortByCategory.Location = new System.Drawing.Point(723, 250);
+            this.buttonSortByCategory.Name = "buttonSortByCategory";
+            this.buttonSortByCategory.Size = new System.Drawing.Size(154, 85);
+            this.buttonSortByCategory.TabIndex = 7;
+            this.buttonSortByCategory.Text = "By Category";
+            this.buttonSortByCategory.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonSortByDate
             // 
-            this.button4.Location = new System.Drawing.Point(367, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(121, 135);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Silver;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(25, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(904, 707);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "тут будет текст заметки";
+            this.buttonSortByDate.Location = new System.Drawing.Point(918, 250);
+            this.buttonSortByDate.Name = "buttonSortByDate";
+            this.buttonSortByDate.Size = new System.Drawing.Size(154, 85);
+            this.buttonSortByDate.TabIndex = 8;
+            this.buttonSortByDate.Text = "By Date";
+            this.buttonSortByDate.UseVisualStyleBackColor = true;
             // 
             // ToDoList
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(1539, 828);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(1769, 829);
+            this.Controls.Add(this.buttonSortByDate);
+            this.Controls.Add(this.buttonSortByCategory);
+            this.Controls.Add(this.buttonSortByPriority);
+            this.Controls.Add(this.buttonSortByTitle);
+            this.Controls.Add(this.buttonMarkComplete);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.listBoxTasks);
             this.Name = "ToDoList";
             this.Text = "To Do List";
             this.Load += new System.EventHandler(this.ToDoList_Load);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -160,14 +156,16 @@
         private System.Windows.Forms.DataGridView ToDoListView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ListBox listBoxTasks;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonMarkComplete;
+        private System.Windows.Forms.Button buttonSortByTitle;
+        private System.Windows.Forms.Button buttonSortByPriority;
+        private System.Windows.Forms.Button buttonSortByCategory;
+        private System.Windows.Forms.Button buttonSortByDate;
     }
 }
 
