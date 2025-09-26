@@ -2,27 +2,41 @@
 
 namespace AdvancedToDoList
 {
+    public enum PriorityLevel
+    {
+        High,      
+        Medium,    
+        Low        
+    }
+
+    public enum CategoryType
+    {
+        Work,
+        Home,
+        Hobby
+    }
     public class TaskItem
     {
         public string Title { get; set; }
-        public string Priority { get; set; } 
-        public string Category { get; set; }
+        public PriorityLevel Priority { get; set; } 
+        public CategoryType Category { get; set; }
         public DateTime DueDate { get; set; }
+        public string Description { get; set; }
         public bool IsCompleted { get; set; }
 
-        public TaskItem(string title, string priority, string category, DateTime dueDate)
+        public override string ToString()
+        {
+            string status = IsCompleted ? "[✓]" : "[ ]";
+            return $"{status} {Title} | Приоритет: {Priority} | Категория: {Category} | До: {DueDate.ToShortDateString()}";
+        }
+
+        public TaskItem(string title, PriorityLevel priority, CategoryType category, DateTime dueDate)
         {
             Title = title;
             Priority = priority;
             Category = category;
             DueDate = dueDate;
-            IsCompleted = false; 
-        }
-
-        public override string ToString()
-        {
-            string status = IsCompleted ? "[V]" : "[ ]";
-            return $"{status} {Title} | {Priority} | {Category} | {DueDate.ToShortDateString()}";
+            IsCompleted = false;
         }
     }
 }

@@ -46,12 +46,12 @@
             this.listBoxTasks.ItemHeight = 25;
             this.listBoxTasks.Location = new System.Drawing.Point(44, 545);
             this.listBoxTasks.Name = "listBoxTasks";
-            this.listBoxTasks.Size = new System.Drawing.Size(1028, 204);
+            this.listBoxTasks.Size = new System.Drawing.Size(1034, 204);
             this.listBoxTasks.TabIndex = 0;
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(342, 133);
+            this.buttonAdd.Location = new System.Drawing.Point(219, 88);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(154, 85);
             this.buttonAdd.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(531, 133);
+            this.buttonEdit.Location = new System.Drawing.Point(389, 88);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(154, 85);
             this.buttonEdit.TabIndex = 2;
@@ -70,57 +70,63 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(723, 133);
+            this.buttonDelete.Location = new System.Drawing.Point(564, 88);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(154, 85);
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonMarkComplete
             // 
-            this.buttonMarkComplete.Location = new System.Drawing.Point(907, 133);
+            this.buttonMarkComplete.Location = new System.Drawing.Point(737, 88);
             this.buttonMarkComplete.Name = "buttonMarkComplete";
             this.buttonMarkComplete.Size = new System.Drawing.Size(154, 85);
             this.buttonMarkComplete.TabIndex = 4;
             this.buttonMarkComplete.Text = "Mark complete";
             this.buttonMarkComplete.UseVisualStyleBackColor = true;
+            this.buttonMarkComplete.Click += new System.EventHandler(this.buttonMarkComplete_Click);
             // 
             // buttonSortByTitle
             // 
-            this.buttonSortByTitle.Location = new System.Drawing.Point(342, 250);
+            this.buttonSortByTitle.Location = new System.Drawing.Point(44, 454);
             this.buttonSortByTitle.Name = "buttonSortByTitle";
-            this.buttonSortByTitle.Size = new System.Drawing.Size(154, 85);
+            this.buttonSortByTitle.Size = new System.Drawing.Size(254, 85);
             this.buttonSortByTitle.TabIndex = 5;
             this.buttonSortByTitle.Text = "By Title";
             this.buttonSortByTitle.UseVisualStyleBackColor = true;
+            this.buttonSortByTitle.Click += new System.EventHandler(this.buttonSortByTitle_Click);
             // 
             // buttonSortByPriority
             // 
-            this.buttonSortByPriority.Location = new System.Drawing.Point(531, 250);
+            this.buttonSortByPriority.Location = new System.Drawing.Point(304, 454);
             this.buttonSortByPriority.Name = "buttonSortByPriority";
-            this.buttonSortByPriority.Size = new System.Drawing.Size(154, 85);
+            this.buttonSortByPriority.Size = new System.Drawing.Size(254, 85);
             this.buttonSortByPriority.TabIndex = 6;
             this.buttonSortByPriority.Text = "By Priority";
             this.buttonSortByPriority.UseVisualStyleBackColor = true;
+            this.buttonSortByPriority.Click += new System.EventHandler(this.buttonSortByPriority_Click);
             // 
             // buttonSortByCategory
             // 
-            this.buttonSortByCategory.Location = new System.Drawing.Point(723, 250);
+            this.buttonSortByCategory.Location = new System.Drawing.Point(564, 454);
             this.buttonSortByCategory.Name = "buttonSortByCategory";
-            this.buttonSortByCategory.Size = new System.Drawing.Size(154, 85);
+            this.buttonSortByCategory.Size = new System.Drawing.Size(254, 85);
             this.buttonSortByCategory.TabIndex = 7;
             this.buttonSortByCategory.Text = "By Category";
             this.buttonSortByCategory.UseVisualStyleBackColor = true;
+            this.buttonSortByCategory.Click += new System.EventHandler(this.buttonSortByCategory_Click);
             // 
             // buttonSortByDate
             // 
-            this.buttonSortByDate.Location = new System.Drawing.Point(918, 250);
+            this.buttonSortByDate.Location = new System.Drawing.Point(824, 454);
             this.buttonSortByDate.Name = "buttonSortByDate";
-            this.buttonSortByDate.Size = new System.Drawing.Size(154, 85);
+            this.buttonSortByDate.Size = new System.Drawing.Size(254, 85);
             this.buttonSortByDate.TabIndex = 8;
             this.buttonSortByDate.Text = "By Date";
             this.buttonSortByDate.UseVisualStyleBackColor = true;
+            this.buttonSortByDate.Click += new System.EventHandler(this.buttonSortByDate_Click);
             // 
             // ToDoList
             // 

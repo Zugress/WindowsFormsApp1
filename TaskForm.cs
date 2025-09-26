@@ -21,15 +21,21 @@ namespace WindowsFormsApp1
         private void buttonOK_Click(object sender, EventArgs e)
         {
 
-            
+            string priorityText = comboBoxPriority.SelectedItem?.ToString() ?? "Medium";
+            PriorityLevel priority = (PriorityLevel)Enum.Parse(typeof(PriorityLevel), priorityText);
+
+            string categoryText = comboBoxCategory.SelectedItem?.ToString() ?? "Work";
+            CategoryType category = (CategoryType)Enum.Parse(typeof(CategoryType), categoryText);
+
             Task = new TaskItem(
                 textBoxTitle.Text,
-                comboBoxPriority.SelectedItem?.ToString() ?? "Medium",
-                textBoxCategory.Text,
+                priority,
+                category,
                 dateTimePickerDueDate.Value
             );
-            Task.IsCompleted = checkBoxIsCompleted.Checked;
 
+            Task.IsCompleted = checkBoxIsCompleted.Checked;
+            
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

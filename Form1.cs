@@ -2,13 +2,14 @@
 using System;
 using System.ComponentModel;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
     public partial class ToDoList : Form
     {
-        DataTable todolist = new DataTable();
+
         bool isEditing = false;
 
         public ToDoList()
@@ -26,7 +27,6 @@ namespace WindowsFormsApp1
         private void Form1_Load(object sender, EventArgs e)
         {
             listBoxTasks.DataSource = tasks;
-            listBoxTasks.DisplayMember = "Title";
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -37,8 +37,55 @@ namespace WindowsFormsApp1
                 tasks.Add(taskForm.Task);
                 listBoxTasks.DataSource = null;
                 listBoxTasks.DataSource = tasks;
-                listBoxTasks.DisplayMember = "Title";
+
+
             }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+          
+            TaskItem selectedTask = (TaskItem)listBoxTasks.SelectedItem;
+            tasks.Remove(selectedTask);
+        }
+
+        private void buttonMarkComplete_Click(object sender, EventArgs e)
+        {
+            
+            
+            TaskItem selectedTask = (TaskItem)listBoxTasks.SelectedItem;
+            selectedTask.IsCompleted = !selectedTask.IsCompleted; 
+            int index = listBoxTasks.SelectedIndex;
+            tasks.ResetItem(index);
+            
+        }
+
+        private void buttonSortByTitle_Click(object sender, EventArgs e)
+        {
+            var sortedList = new BindingList<TaskItem>(tasks.OrderBy(t => t.Title).ToList());
+            tasks = sortedList;
+            listBoxTasks.DataSource = tasks; 
+        }
+
+        private void buttonSortByPriority_Click(object sender, EventArgs e)
+        {
+            var sortedList = new BindingList<TaskItem>(tasks.OrderBy(t => t.Priority).ToList());
+            tasks = sortedList;
+            listBoxTasks.DataSource = tasks;
+        }
+
+        private void buttonSortByCategory_Click(object sender, EventArgs e)
+        {
+            var sortedList = new BindingList<TaskItem>(tasks.OrderBy(t => t.Category).ToList());
+            tasks = sortedList;
+            listBoxTasks.DataSource = tasks;
+        }
+
+        private void buttonSortByDate_Click(object sender, EventArgs e)
+        {
+            var sortedList = new BindingList<TaskItem>(tasks.OrderBy(t => t.DueDate).ToList());
+            tasks = sortedList;
+            listBoxTasks.DataSource = tasks;
         }
     }
 }
