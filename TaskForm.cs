@@ -34,7 +34,6 @@ namespace WindowsFormsApp1
                 dateTimePickerDueDate.Value
             );
 
-            Task.IsCompleted = checkBoxIsCompleted.Checked;
             
             this.DialogResult = DialogResult.OK;
             this.Close();
@@ -44,6 +43,11 @@ namespace WindowsFormsApp1
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void testBoxDescription_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

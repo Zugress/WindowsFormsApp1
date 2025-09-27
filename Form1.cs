@@ -87,5 +87,15 @@ namespace WindowsFormsApp1
             tasks = sortedList;
             listBoxTasks.DataSource = tasks;
         }
+
+        private void listBoxTasks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
