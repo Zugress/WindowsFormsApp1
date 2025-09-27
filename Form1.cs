@@ -37,8 +37,6 @@ namespace WindowsFormsApp1
                 tasks.Add(taskForm.Task);
                 listBoxTasks.DataSource = null;
                 listBoxTasks.DataSource = tasks;
-
-
             }
         }
 
@@ -90,12 +88,47 @@ namespace WindowsFormsApp1
 
         private void listBoxTasks_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBoxTasks.SelectedItem != null)
+            {
+                TaskItem selectedTask = (TaskItem)listBoxTasks.SelectedItem;
 
+                textBoxTaskDescription.Text = selectedTask.Description;
+            }
+            else
+            {
+                textBoxTaskDescription.Text = string.Empty;
+            }
         }
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
+            if (listBoxTasks.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите задачу для редактирования!");
+                return;
+            }
 
+            TaskItem selectedTask = (TaskItem)listBoxTasks.SelectedItem;
+
+            TaskForm editForm = new TaskForm(selectedTask);
+
+            if (editForm.ShowDialog() == DialogResult.OK)
+            {
+
+                int selectedIndex = listBoxTasks.SelectedIndex;
+                tasks.ResetItem(selectedIndex);
+
+                listBoxTasks.DataSource = null;
+                listBoxTasks.DataSource = tasks;
+
+                if (listBoxTasks.SelectedItem != null)
+                {
+                    TaskItem updatedTask = (TaskItem)listBoxTasks.SelectedItem;
+                    textBoxTaskDescription.Text = updatedTask.Description;
+                }
+
+                MessageBox.Show("Задача обновлена!");
+            }
         }
     }
 }

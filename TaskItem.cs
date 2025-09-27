@@ -30,12 +30,13 @@ namespace AdvancedToDoList
             return $"{status} {Title} | Приоритет: {Priority} | Категория: {Category} | До: {DueDate.ToShortDateString()}";
         }
 
-        public TaskItem(string title, PriorityLevel priority, CategoryType category, DateTime dueDate)
+        public TaskItem(string title, PriorityLevel priority, CategoryType category, DateTime dueDate, string description)
         {
             Title = title;
             Priority = priority;
             Category = category;
             DueDate = dueDate;
+            Description = description;
             IsCompleted = false;
         }
     }
